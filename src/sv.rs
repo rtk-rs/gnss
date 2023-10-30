@@ -1,7 +1,7 @@
 //! Space vehicles
-use thiserror::Error;
-use hifitime::{Epoch, TimeScale};
 use crate::constellation::Constellation;
+use hifitime::{Epoch, TimeScale};
+use thiserror::Error;
 
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
