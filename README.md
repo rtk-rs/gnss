@@ -1,9 +1,9 @@
 # GNSS
 
 [![crates.io](https://img.shields.io/crates/v/gnss-rs.svg)](https://crates.io/crates/gnss-rs)
+[![rustc v1.63](https://img.shields.io/badge/minimum%20rustc-1.63-blue?logo=rust)](https://www.whatrustisit.com)
 [![Rust](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml/badge.svg)](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml)
 [![crates.io](https://docs.rs/gnss-rs/badge.svg)](https://docs.rs/gnss-rs/badge.svg)
-[![minimum rustc: 1.63](https://img.shields.io/badge/minimum%20rustc-1.63-blue?logo=rust)](https://www.whatrustisit.com)
 
 High level definitions to work with GNSS in Rust
 
@@ -31,10 +31,10 @@ extern crate gnss_rs as gnss;
 ```rust
 extern crate gnss_rs as gnss;
 
-use hifitime::TimeScale;
 use gnss::sv;
 use gnss::prelude::*;
 use std::str::FromStr;
+use hifitime::TimeScale;
 
 let sv = SV::new(Constellation::GPS, 1);
 assert_eq!(sv.constellation, Constellation::GPS);
