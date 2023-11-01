@@ -35,10 +35,10 @@ impl SV {
     /// ```
     /// extern crate gnss_rs as gnss;
     ///
-    /// use hifitime::{TimeScale, Epoch};
     /// use gnss::sv;
     /// use gnss::prelude::*;
     /// use std::str::FromStr;
+    /// use hifitime::{TimeScale, Epoch};
     ///
     /// let sv = SV::new(Constellation::GPS, 1);
     /// assert_eq!(sv.constellation, Constellation::GPS);
@@ -55,7 +55,7 @@ impl SV {
     pub fn new(constellation: Constellation, prn: u8) -> Self {
         Self { prn, constellation }
     }
-    /// Returns the Timescale of which this SV is a part of.
+    /// Returns the Timescale to which this SV belongs to.
     /// ```
     /// extern crate gnss_rs as gnss;
     ///
@@ -212,11 +212,21 @@ mod test {
     #[test]
     fn sbas_db_sanity() {
         for sbas in SBAS_VEHICLES.iter() {
+            /* verify PRN */
+            assert!(sbas.prn > 100);
+
+            /* verify constellation */
+            let constellation = Constellation::from_str(sbas.constellation);
             assert!(
-                Constellation::from_str(sbas.constellation).is_ok(),
+                constellation.is_ok(),
                 "sbas database should only contain valid constellations: \"{}\"",
                 sbas.constellation,
             );
+
+            let constellation = constellation.unwrap();
+            assert_eq!(constellation.timescale(), Some(TimeScale::GPST));
+
+            /* verify launch date */
             let _ = Epoch::from_gregorian_utc_at_midnight(
                 sbas.launched_year,
                 sbas.launched_month,
