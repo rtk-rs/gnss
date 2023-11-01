@@ -72,22 +72,22 @@ impl std::fmt::Display for Constellation {
 impl Constellation {
     /// Returns true if Self is an augmentation system
     pub fn is_sbas(&self) -> bool {
-        match *self {
+        matches!(
+            *self,
             Constellation::WAAS
-            | Constellation::KASS
-            | Constellation::BDSBAS
-            | Constellation::EGNOS
-            | Constellation::GAGAN
-            | Constellation::SDCM
-            | Constellation::ASBAS
-            | Constellation::SPAN
-            | Constellation::MSAS
-            | Constellation::NSAS
-            | Constellation::ASAL
-            | Constellation::AusNZ
-            | Constellation::SBAS => true,
-            _ => false,
-        }
+                | Constellation::KASS
+                | Constellation::BDSBAS
+                | Constellation::EGNOS
+                | Constellation::GAGAN
+                | Constellation::SDCM
+                | Constellation::ASBAS
+                | Constellation::SPAN
+                | Constellation::MSAS
+                | Constellation::NSAS
+                | Constellation::ASAL
+                | Constellation::AusNZ
+                | Constellation::SBAS
+        )
     }
     pub(crate) fn is_mixed(&self) -> bool {
         *self == Constellation::Mixed

@@ -79,7 +79,7 @@ impl SV {
         let to_find = (prn as u16) + 100;
         SBAS_VEHICLES
             .iter()
-            .filter_map(|e| if e.prn == to_find { Some(e) } else { None })
+            .filter(|e| e.prn == to_find)
             .reduce(|e, _| e)
     }
     /// Returns datetime at which Self was either launched or its serviced was deployed.
@@ -103,7 +103,7 @@ impl std::str::FromStr for SV {
      */
     fn from_str(string: &str) -> Result<Self, Self::Err> {
         let constellation = Constellation::from_str(&string[0..1])?;
-        let prn = u8::from_str_radix(string[1..].trim(), 10)?;
+        let prn = string[1..].trim().parse::<u8>()?;
         let mut ret = SV::new(constellation, prn);
         if constellation.is_sbas() {
             // map the SXX to meaningful SBAS
