@@ -68,4 +68,4 @@ assert_eq!(sv.launched_date(), Some(launched_date));
 Licensed under either of:
 
 * Apache Version 2.0 ([LICENSE-APACHE](http://www.apache.org/licenses/LICENSE-2.0))
-* MIT ([LICENSE-MIT](http://opensource.org/licenses/MIT)
+* MIT ([LICENSE-MIT](http://opensource.org/licenses/MIT))
