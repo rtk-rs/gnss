@@ -10,7 +10,6 @@ High level definitions to work with GNSS in Rust
 + Space Vehicles: `SV`
 + GNSS Constellations: `Constellation`
 + GNSS Timescales: `Constellation.timescale()`
-+ Signal to Noise Ratio: `SNR`
 
 ## Getting started
 

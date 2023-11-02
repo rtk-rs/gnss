@@ -4,16 +4,17 @@
 #[macro_use]
 mod macros;
 
+// pub modules
 pub mod constellation;
-mod snr;
 pub mod sv;
 
+// prelude (pkg)
 pub mod prelude {
     pub use crate::constellation::Constellation;
-    pub use crate::snr::SNR;
     pub use crate::sv::SV;
 }
 
+// private modules
 mod sbas;
 
 #[cfg(feature = "sbas")]
