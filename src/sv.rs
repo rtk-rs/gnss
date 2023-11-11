@@ -12,7 +12,7 @@ use serde::{Deserialize, Serialize};
 pub struct SV {
     /// PRN identification # for this vehicle
     pub prn: u8,
-    /// `GNSS` Constellation to which this vehicle is tied to
+    /// `GNSS` Constellation to which this vehicle belongs to
     pub constellation: Constellation,
 }
 
