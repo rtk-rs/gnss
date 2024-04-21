@@ -66,6 +66,8 @@ impl SV {
     ///
     /// assert_eq!(sv!("G01").timescale(), Some(TimeScale::GPST));
     /// assert_eq!(sv!("E13").timescale(), Some(TimeScale::GST));
+    /// assert_eq!(sv!("C15").timescale(), Some(TimeScale::BDT));
+    /// assert_eq!(sv!("J08").timescale(), Some(TimeScale::QZSST));
     /// ```
     pub fn timescale(&self) -> Option<TimeScale> {
         self.constellation.timescale()

@@ -96,7 +96,8 @@ impl Constellation {
     /// if related time scale is not supported.
     pub fn timescale(&self) -> Option<TimeScale> {
         match self {
-            Self::GPS | Self::QZSS => Some(TimeScale::GPST),
+            Self::GPS => Some(TimeScale::GPST),
+            Self::QZSS => Some(TimeScale::QZSST),
             Self::Galileo => Some(TimeScale::GST),
             Self::BeiDou => Some(TimeScale::BDT),
             Self::Glonass => Some(TimeScale::UTC),
