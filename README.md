@@ -85,12 +85,13 @@ on Latitude and Longitude coordinates.
 Many libraries exist nowadays to process GNSS data or perform typical GNSS processing tasks.  
 Amongst them, be sure to checkout:
 
-- [Nyx](https://github.com/nyx-space/anise) for Orbital navigation
-- [ANISE](https://github.com/nyx-space/anise) for Earth orientation modeling and Orbital navigation
-- [RTK-RS](https://github.com/rtk-rs/gnss-rtk) for Precise Point Positioning
-- [RINEX](https://github.com/georust/rinex) for RINEX files processing and management
-- [SP3](https://github.com/georust/rinex) for SP3 files processing and management
-- [CGGTTS](https://github.com/gwbres/cggtts) for CGGTTS files production and processing
+- [Nyx](https://github.com/nyx-space/nyx): Orbital navigation
+- [ANISE](https://github.com/nyx-space/anise): Earth orientation modeling and Orbital navigation
+- [Rtk-rs](https://github.com/rtk-rs/gnss-rtk): Precise Point Positioning, related calculations and modeling
+- [RINEX](https://github.com/georust/rinex): files processing and management
+- [SP3](https://github.com/georust/rinex): files processing and management
+- [Hifitime](https://github.com/nyx-space/hifitime): Timescale and related calculations
+- [CGGTTS](https://github.com/gwbres/cggtts): files production and processing
 
 ## License
 
