@@ -8,9 +8,19 @@ mod macros;
 pub mod constellation;
 pub mod sv;
 
+#[cfg(feature = "cospar")]
+pub mod cospar;
+
+#[cfg(feature = "domes")]
+pub mod domes;
+
 // prelude (pkg)
 pub mod prelude {
     pub use crate::constellation::Constellation;
+    #[cfg(feature = "cospar")]
+    pub use crate::cospar::COSPAR;
+    #[cfg(feature = "domes")]
+    pub use crate::domes::{TrackingPoint as DOMESTrackingPoint, DOMES};
     pub use crate::sv::SV;
 }
 
