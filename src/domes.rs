@@ -3,9 +3,6 @@ use thiserror::Error;
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-#[cfg(docrs)]
-pub use crate::bibliography::Bibliography;
-
 /// DOMES parsing error
 #[derive(Debug, Error)]
 pub enum Error {
