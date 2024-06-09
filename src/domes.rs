@@ -28,7 +28,8 @@ pub enum TrackingPoint {
     Instrument,
 }
 
-/// DOMES Site identifier, see [Bibliography::IgnItrfDOMES]
+/// DOMES site identification number,
+/// see <https://itrf.ign.fr/en/network/domes/description>.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct DOMES {
