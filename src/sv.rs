@@ -92,6 +92,10 @@ impl SV {
             definition.launched_day,
         ))
     }
+    /// Returns True if Self is a BeiDou geostationnary vehicle
+    pub fn is_beidou_geo(&self) -> bool {
+        self.constellation == Constellation::BeiDou && (self.prn < 6 || self.prn > 58)
+    }
 }
 
 impl std::str::FromStr for SV {
@@ -233,5 +237,16 @@ mod test {
                 sbas.launched_day,
             );
         }
+    }
+    #[test]
+    fn test_beidou_geo() {
+        assert_eq!(SV::from_str("G01").unwrap().is_beidou_geo(), false);
+        assert_eq!(SV::from_str("E01").unwrap().is_beidou_geo(), false);
+        assert_eq!(SV::from_str("C01").unwrap().is_beidou_geo(), true);
+        assert_eq!(SV::from_str("C02").unwrap().is_beidou_geo(), true);
+        assert_eq!(SV::from_str("C06").unwrap().is_beidou_geo(), false);
+        assert_eq!(SV::from_str("C48").unwrap().is_beidou_geo(), false);
+        assert_eq!(SV::from_str("C59").unwrap().is_beidou_geo(), true);
+        assert_eq!(SV::from_str("C60").unwrap().is_beidou_geo(), true);
     }
 }
