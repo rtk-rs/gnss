@@ -95,7 +95,4 @@ Amongst them, be sure to checkout:
 
 ## License
 
-Licensed under either of:
-
-* Apache Version 2.0 ([LICENSE-APACHE](http://www.apache.org/licenses/LICENSE-2.0))
-* MIT ([LICENSE-MIT](http://opensource.org/licenses/MIT))
+Licensed under [MPL-2.0](https://opensource.org/license/mpl-2.0)
