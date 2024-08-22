@@ -3,20 +3,8 @@ name = "gnss-planetary"
 version = "1.0.0"
 license = "MPL-2.0"
 authors = ["Guillaume W. Bres <guillaume.bressaix@gmail.com>"]
-description = "GNSS constellations and space vehicles support"
-homepage = "https://github.com/rtk-rs/gnss"
-repository = "https://github.com/rtk-rs/gnss"
-keywords = ["gnss", "gps", "glonass", "galileo"]
-categories = ["science", "science::geo"]
 edition = "2021"
-readme = "README.md"
-
-[features]
-default = []
-
-[package.metadata.docs.rs]
-all-features = true
-rustdoc-args = ["--cfg", "docrs", "--generate-link-to-definition"]
+publish = false
 
 [dependencies]
 anise = "0.4.2"
