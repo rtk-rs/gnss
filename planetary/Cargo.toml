@@ -19,5 +19,5 @@ all-features = true
 rustdoc-args = ["--cfg", "docrs", "--generate-link-to-definition"]
 
 [dependencies]
-anise = { version = "0.4.2", optional = true }
+anise = "0.4.2"
 serde = { version = "1.0", optional = true, default-features = false, features = ["derive"] }
