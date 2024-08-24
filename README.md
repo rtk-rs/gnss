@@ -3,7 +3,7 @@
 [![crates.io](https://img.shields.io/crates/v/gnss-rs.svg)](https://crates.io/crates/gnss-rs)
 [![rustc v1.63](https://img.shields.io/badge/minimum%20rustc-1.63-blue?logo=rust)](https://www.whatrustisit.com)
 [![Rust](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml/badge.svg)](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml)
-[![crates.io](https://docs.rs/gnss-rs/badge.svg)](https://docs.rs/gnss-rs/badge.svg)
+[![crates.io](https://docs.rs/gnss-rs/badge.svg)](https://docs.rs/gnss-rs)
 
 High level definitions to work with GNSS in Rust
 
