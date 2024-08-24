@@ -8,7 +8,7 @@ use std::path::PathBuf;
 
 use anise::{
     //constants::celestial_objects::EARTH,
-    constants::frames::{EARTH_J2000, EARTH_ITRF93},
+    constants::frames::{EARTH_ITRF93, EARTH_J2000},
     prelude::MetaAlmanac,
     structure::planetocentric::{ellipsoid::Ellipsoid, PlanetaryData},
 };
@@ -26,9 +26,7 @@ fn main() {
     let gps_wgs84 = ellipsoid(298.257223563_f64, 6378.137_f64, 6356.7523142_f64);
 
     let mut almanac =
-        MetaAlmanac::latest()
-        .unwrap_or_else(|e| panic!("MetaAlmanac::latest() error: {}", e));
-   
+        MetaAlmanac::latest().unwrap_or_else(|e| panic!("MetaAlmanac::latest() error: {}", e));
 
     // define new frames
     for (frame_id, frame_name, shape) in [(3990001, "GPS WGS84", gps_wgs84)] {
@@ -37,20 +35,17 @@ fn main() {
         //    .planetary_data
         //    .get_by_name("GPS WGS84")
         //    .unwrap_or_else(|e| panic!("get_by_name({}) failure: {}", "GPS WGS84", e));
-        
+
         let mut earth_inertial = almanac
             .frame_from_uid(EARTH_J2000)
             .unwrap_or_else(|e| panic!("Failed to retrieve Earth from_uid: {}", e));
 
         earth_inertial.shape = Some(shape);
 
-        //pck.get_by_name("GPS WGS84")
-        //    .unwrap_or_else(|e| panic!("oops: {}", e));
-
         let planetary_data = PlanetaryData {
             parent_id: 0,
             shape: Some(shape),
-            object_id: frame_id, //earth_inertial.ephemeris_id,
+            object_id: frame_id, //earth_inertial.ephemeris_id, //frame_id,
             mu_km3_s2: earth_inertial.mu_km3_s2.unwrap_or_default(),
             long_axis: None,
             prime_meridian: None,
@@ -103,17 +98,19 @@ mod test {
 
         //let pck = PlanetaryDataSet::from_bytes(bytes);
         //almanac.with_planetary_data(pck);
-        
+
         // much simpler, and seems to work
         let mut almanac = Almanac::default();
-        almanac.load("pck_gnss.pca")
+        almanac
+            .load("pck_gnss.pca")
             .unwrap_or_else(|e| panic!("Failed to read GNSS PCA: does file exist? {}", e));
 
-        // load new definition
-        let gps_wgs84 = almanac
-            .planetary_data
-            .get_by_id(3990001)
-            //.get_by_name("GPS WGS84")
-            .unwrap_or_else(|e| panic!("{}", e));
+        // load new definitions
+        for key in ["GPS WGS84"] {
+            let frame = almanac
+                .planetary_data
+                .get_by_name(key)
+                .unwrap_or_else(|e| panic!("Failed to fetch {}: {}", key, e));
+        }
     }
 }
