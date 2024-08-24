@@ -188,6 +188,7 @@ impl std::fmt::UpperHex for Constellation {
             Self::BeiDou => write!(f, "BDS"),
             Self::QZSS => write!(f, "QZSS"),
             Self::IRNSS => write!(f, "IRNSS"),
+            Self::SBAS => write!(f, "SBAS"),
             Self::WAAS => write!(f, "WAAS"),
             Self::AusNZ => write!(f, "AUSNZ"),
             Self::EGNOS => write!(f, "EGNOS"),
@@ -202,7 +203,6 @@ impl std::fmt::UpperHex for Constellation {
             Self::ASBAS => write!(f, "ASBAS"),
             Self::ASAL => write!(f, "ASAL"),
             Self::Mixed => write!(f, "MIXED"),
-            _ => Err(std::fmt::Error),
         }
     }
 }
@@ -244,6 +244,33 @@ mod tests {
 
         for desc in ["X", "x", "GPX", "gpx", "unknown", "blah"] {
             assert!(Constellation::from_str(desc).is_err());
+        }
+    }
+    #[test]
+    fn format() {
+        for (constell, expected) in [
+            (Constellation::GPS, "GPS"),
+            (Constellation::BeiDou, "BDS"),
+            (Constellation::Glonass, "GLO"),
+            (Constellation::Galileo, "GAL"),
+            (Constellation::QZSS, "QZSS"),
+            (Constellation::IRNSS, "IRNSS"),
+            (Constellation::WAAS, "WAAS"),
+            (Constellation::MSAS, "MSAS"),
+            (Constellation::GAGAN, "GAGAN"),
+            (Constellation::BDSBAS, "BDSBAS"),
+            (Constellation::KASS, "KASS"),
+            (Constellation::SDCM, "SDCM"),
+            (Constellation::ASBAS, "ASBAS"),
+            (Constellation::SPAN, "SPAN"),
+            (Constellation::SBAS, "SBAS"),
+            (Constellation::AusNZ, "AUSNZ"),
+            (Constellation::GBAS, "GBAS"),
+            (Constellation::NSAS, "NSAS"),
+            (Constellation::ASAL, "ASAL"),
+            (Constellation::Mixed, "MIXED"),
+        ] {
+            assert_eq!(constell.to_string(), expected);
         }
     }
     #[test]
