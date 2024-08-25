@@ -4,6 +4,7 @@
  *
  * rtk-rs @github.com
  */
+use env_logger::{Builder, Target};
 use std::path::PathBuf;
 
 use anise::{
@@ -23,6 +24,13 @@ fn ellipsoid(flatenning: f64, semi_major_km: f64, semi_minor_km: f64) -> Ellipso
 }
 
 fn main() {
+    let mut builder = Builder::from_default_env();
+    builder
+        .target(Target::Stdout)
+        .format_timestamp_secs()
+        .format_module_path(true)
+        .init();
+
     let gps_wgs84 = ellipsoid(298.257223563_f64, 6378.137_f64, 6356.7523142_f64);
 
     let mut almanac =
@@ -37,7 +45,7 @@ fn main() {
         //    .unwrap_or_else(|e| panic!("get_by_name({}) failure: {}", "GPS WGS84", e));
 
         let mut earth_inertial = almanac
-            .frame_from_uid(EARTH_J2000)
+            .frame_from_uid(EARTH_ITRF93)
             .unwrap_or_else(|e| panic!("Failed to retrieve Earth from_uid: {}", e));
 
         earth_inertial.shape = Some(shape);
@@ -110,6 +118,7 @@ mod test {
         // load new definitions
         for key in ["GPS WGS84"] {
             let earth_itrf93 = Frame::new(EARTH, ITRF93);
+
             let planetary_data = almanac
                 .planetary_data
                 .get_by_name(key)
@@ -121,6 +130,8 @@ mod test {
             };
 
             let earth_itrf93_wgs84 = planetary_data.to_frame(frame_uid);
+
+            // rotation attempt
         }
     }
 }
