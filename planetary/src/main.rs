@@ -80,7 +80,9 @@ fn main() {
 
 #[cfg(test)]
 mod test {
-    use anise::prelude::Almanac;
+    use anise::constants::celestial_objects::EARTH;
+    use anise::constants::orientations::ITRF93;
+    use anise::prelude::{Almanac, Frame, FrameUid};
     use anise::structure::PlanetaryDataSet;
     use std::fs::read_to_string;
     use std::fs::File;
@@ -107,10 +109,18 @@ mod test {
 
         // load new definitions
         for key in ["GPS WGS84"] {
-            let frame = almanac
+            let earth_itrf93 = Frame::new(EARTH, ITRF93);
+            let planetary_data = almanac
                 .planetary_data
                 .get_by_name(key)
                 .unwrap_or_else(|e| panic!("Failed to fetch {}: {}", key, e));
+
+            let frame_uid = FrameUid {
+                ephemeris_id: earth_itrf93.ephemeris_id,
+                orientation_id: earth_itrf93.orientation_id,
+            };
+
+            let earth_itrf93_wgs84 = planetary_data.to_frame(frame_uid);
         }
     }
 }
