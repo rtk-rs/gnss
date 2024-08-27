@@ -11,7 +11,7 @@ pub enum Error {
 }
 
 /// COSPAR ID number
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct COSPAR {
     /// Launch year
