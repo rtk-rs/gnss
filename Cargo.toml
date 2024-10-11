@@ -46,5 +46,5 @@ thiserror = "1"
 lazy_static = "1.4"
 hifitime = "4.0.0-beta"
 geo = { version = "0.28", optional = true }
-wkt = { version = "0.10.0", default-features = false, optional = true }
+wkt = { version = "0.11.1", default-features = false, optional = true }
 serde = { version = "1.0", optional = true, default-features = false, features = ["derive"] }
