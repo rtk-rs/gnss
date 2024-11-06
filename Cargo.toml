@@ -42,7 +42,7 @@ serde_json = { version = "1.0", features = ["preserve_order"] }
 serde = { version = "1.0", default-features = false, features = ["derive"] }
 
 [dependencies]
-thiserror = "1"
+thiserror = "2"
 lazy_static = "1.4"
 hifitime = "4.0.0-beta"
 geo = { version = "0.28", optional = true }
