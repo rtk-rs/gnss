@@ -63,7 +63,7 @@ fn load_database() -> Vec<(Constellation, geo::Polygon)> {
 }
 
 #[cfg(feature = "sbas")]
-#[cfg_attr(docrs, doc(cfg(feature = "sbas")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "sbas")))]
 /// Select an augmentation system conveniently, based on given location
 /// in decimal degrees
 /// ```
