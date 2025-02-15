@@ -174,6 +174,7 @@ mod test {
             ("E4 ", SV::new(Constellation::Galileo, 4)),
             ("R 9", SV::new(Constellation::Glonass, 9)),
             ("I 3", SV::new(Constellation::IRNSS, 3)),
+            ("I09", SV::new(Constellation::IRNSS, 9)),
             ("I16", SV::new(Constellation::IRNSS, 16)),
         ] {
             let sv = SV::from_str(descriptor);
