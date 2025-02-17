@@ -5,6 +5,8 @@
 [![Rust](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml/badge.svg)](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml)
 [![crates.io](https://docs.rs/gnss-rs/badge.svg)](https://docs.rs/gnss-rs)
 
+[![License](https://img.shields.io/badge/license-MPL_2.0-orange?style=for-the-badge&logo=mozilla)](https://github.com/rtk-rs/qc-traits/blob/main/LICENSE)
+
 High level definitions to work with GNSS in Rust
 
 + Space Vehicles definitions: `SV`
@@ -95,4 +97,5 @@ Amongst them, be sure to checkout:
 
 ## License
 
-Licensed under [MPL-2.0](https://opensource.org/license/mpl-2.0)
+This library is part of the [RTK-rs framework](https://github.com/rtk-rs) which
+is delivered under the [Mozilla V2 Public](https://www.mozilla.org/en-US/MPL/2.0) license.
