@@ -65,7 +65,29 @@ pub enum Constellation {
 
 impl std::fmt::Display for Constellation {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "{:X}", self)
+        match self {
+            Self::GPS => write!(f, "GPS"),
+            Self::Glonass => write!(f, "Glonass"),
+            Self::BeiDou => write!(f, "BDS"),
+            Self::QZSS => write!(f, "QZSS"),
+            Self::Galileo => write!(f, "Galileo"),
+            Self::IRNSS => write!(f, "IRNSS"),
+            Self::WAAS => write!(f, "WAAS"),
+            Self::EGNOS => write!(f, "EGNOS"),
+            Self::MSAS => write!(f, "MSAS"),
+            Self::GAGAN => write!(f, "GAGAN"),
+            Self::BDSBAS => write!(f, "BDSBAS"),
+            Self::KASS => write!(f, "KASS"),
+            Self::SDCM => write!(f, "SDCM"),
+            Self::ASBAS => write!(f, "ASBAS"),
+            Self::SPAN => write!(f, "SPAN"),
+            Self::SBAS => write!(f, "SBAS"),
+            Self::AusNZ => write!(f, "AusNZ"),
+            Self::GBAS => write!(f, "GBAS"),
+            Self::NSAS => write!(f, "NSAS"),
+            Self::ASAL => write!(f, "ASAL"),
+            Self::Mixed => write!(f, "MIXED"),
+        }
     }
 }
 
@@ -251,23 +273,11 @@ mod tests {
         for (constell, expected) in [
             (Constellation::GPS, "GPS"),
             (Constellation::BeiDou, "BDS"),
-            (Constellation::Glonass, "GLO"),
-            (Constellation::Galileo, "GAL"),
+            (Constellation::Glonass, "Glonass"),
+            (Constellation::Galileo, "Galileo"),
             (Constellation::QZSS, "QZSS"),
             (Constellation::IRNSS, "IRNSS"),
             (Constellation::WAAS, "WAAS"),
-            (Constellation::MSAS, "MSAS"),
-            (Constellation::GAGAN, "GAGAN"),
-            (Constellation::BDSBAS, "BDSBAS"),
-            (Constellation::KASS, "KASS"),
-            (Constellation::SDCM, "SDCM"),
-            (Constellation::ASBAS, "ASBAS"),
-            (Constellation::SPAN, "SPAN"),
-            (Constellation::SBAS, "SBAS"),
-            (Constellation::AusNZ, "AUSNZ"),
-            (Constellation::GBAS, "GBAS"),
-            (Constellation::NSAS, "NSAS"),
-            (Constellation::ASAL, "ASAL"),
             (Constellation::Mixed, "MIXED"),
         ] {
             assert_eq!(constell.to_string(), expected);
