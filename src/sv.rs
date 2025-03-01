@@ -52,7 +52,7 @@ impl SV {
     ///     sv!("S23").launched_date(),
     ///     Some(launched_date));
     /// ```
-    pub fn new(constellation: Constellation, prn: u8) -> Self {
+    pub const fn new(constellation: Constellation, prn: u8) -> Self {
         Self { prn, constellation }
     }
     /// Returns the Timescale to which this SV belongs to.
