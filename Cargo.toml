@@ -43,7 +43,7 @@ serde = { version = "1", default-features = false, features = ["derive"] }
 
 [dependencies]
 thiserror = "2"
-hifitime = "4.0"
+hifitime = { git = "https://github.com/nyx-space/hifitime", branch = "master" } 
 lazy_static = "1.5"
 geo = { version = "0.29", optional = true }
 wkt = { version = "0.10", default-features = false, optional = true }
