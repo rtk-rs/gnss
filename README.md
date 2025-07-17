@@ -1,11 +1,11 @@
 # GNSS
 
-[![Rust](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml/badge.svg)](https://github.com/rtk-rs/gnss/actions/workflows/rust.yml)
-[![Rust](https://github.com/rtk-rs/gnss/actions/workflows/daily.yml/badge.svg)](https://github.com/rtk-rs/gnss/actions/workflows/daily.yml)
+[![Rust](https://github.com/nav-solutions/gnss/actions/workflows/rust.yml/badge.svg)](https://github.com/nav-solutions/gnss/actions/workflows/rust.yml)
+[![Rust](https://github.com/nav-solutions/gnss/actions/workflows/daily.yml/badge.svg)](https://github.com/nav-solutions/gnss/actions/workflows/daily.yml)
 [![crates.io](https://img.shields.io/crates/v/gnss-rs.svg)](https://crates.io/crates/gnss-rs)
 [![crates.io](https://docs.rs/gnss-rs/badge.svg)](https://docs.rs/gnss-rs)
 
-[![License](https://img.shields.io/badge/license-MPL_2.0-orange?style=for-the-badge&logo=mozilla)](https://github.com/rtk-rs/qc-traits/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MPL_2.0-orange?style=for-the-badge&logo=mozilla)](https://github.com/nav-solutions/qc-traits/blob/main/LICENSE)
 
 High level definitions to work with GNSS in Rust
 
@@ -89,13 +89,13 @@ Amongst them, be sure to checkout:
 
 - [Nyx](https://github.com/nyx-space/nyx): Orbital navigation
 - [ANISE](https://github.com/nyx-space/anise): Earth orientation modeling and Orbital navigation
-- [Rtk-rs](https://github.com/rtk-rs/gnss-rtk): Precise Point Positioning, related calculations and modeling
-- [RINEX](https://github.com/georust/rinex): files processing and management
-- [SP3](https://github.com/georust/rinex): files processing and management
+- [GNSS-RTK](https://github.com/nav-solutions/gnss-rtk): Precise Point Positioning, related calculations and modeling
+- [RINEX](https://github.com/nav-solutions/rinex): files processing and management
+- [SP3](https://github.com/nav-solutions/sp3): files processing and management
 - [Hifitime](https://github.com/nyx-space/hifitime): Timescale and related calculations
-- [CGGTTS](https://github.com/gwbres/cggtts): files production and processing
+- [CGGTTS](https://github.com/nav-solutions/cggtts): files production and processing
 
 ## License
 
-This library is part of the [RTK-rs framework](https://github.com/rtk-rs) which
+This library is part of the [NAV-Solutions framework](https://github.com/nav-solutions) which
 is delivered under the [Mozilla V2 Public](https://www.mozilla.org/en-US/MPL/2.0) license.
