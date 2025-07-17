@@ -1,11 +1,11 @@
 [package]
 name = "gnss-rs"
-version = "2.4.0"
+version = "2.4.1"
 license = "MPL-2.0"
 authors = ["Guillaume W. Bres <guillaume.bressaix@gmail.com>"]
-description = "GNSS constellations and space vehicles support"
-homepage = "https://github.com/rtk-rs/gnss"
-repository = "https://github.com/rtk-rs/gnss"
+description = "GNSS constellations"
+homepage = "https://github.com/nav-solutions"
+repository = "https://github.com/nav-solutions/gnss"
 keywords = ["gnss", "gps", "glonass", "galileo"]
 categories = ["science", "science::geo"]
 edition = "2021"
